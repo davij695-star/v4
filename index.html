@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iPhone Legacy Map — Pro / Con v4 (Themed)</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Light = Pros (green). Dark = Cons (red). Each app uses a thematic iOS-like layout (Instagram, Stocks, Health, etc.).">
+</head>
+<body>
+  <header class="site-header" aria-label="Project header">
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>iPhone Legacy Map</h1>
+    </div>
+    <nav class="site-actions" aria-label="Top actions">
+      <button id="btn-help" class="ghost" aria-haspopup="dialog" aria-controls="help-modal" aria-label="Open help">Help</button>
+      <button id="btn-theme" class="ghost" aria-label="Toggle theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="stage" aria-label="Interactive phone stage">
+    <section class="iphone-wrap" aria-label="iPhone 14 frame">
+      <div class="iphone-14">
+        <div class="bezel">
+          <div class="dynamic-island" aria-hidden="true"></div>
+          <div class="screen" role="region" aria-label="Home screen">
+            <div id="statusbar" class="statusbar">
+              <span class="time" id="status-time">9:41</span>
+              <span id="status-pill" class="status-pill" aria-hidden="true">Pros</span>
+            </div>
+
+            <div id="home" class="home-grid" aria-label="App icons grid" role="grid">
+              <button class="app-icon" role="gridcell" data-app="timeline" aria-label="Open app: Timeline"><img src="assets/icons/timeline.svg" alt="" /><span>Timeline</span></button>
+              <button class="app-icon" role="gridcell" data-app="design" aria-label="Open app: Design Evolution"><img src="assets/icons/design.svg" alt="" /><span>Design</span></button>
+              <button class="app-icon" role="gridcell" data-app="comms" aria-label="Open app: Communication & Social"><img src="assets/icons/society.svg" alt="" /><span>Comm</span></button>
+              <button class="app-icon" role="gridcell" data-app="work" aria-label="Open app: Work"><img src="assets/icons/design.svg" alt="" /><span>Work</span></button>
+              <button class="app-icon" role="gridcell" data-app="economy" aria-label="Open app: Economy"><img src="assets/icons/hardware.svg" alt="" /><span>Economy</span></button>
+              <button class="app-icon" role="gridcell" data-app="culture" aria-label="Open app: Culture"><img src="assets/icons/camera.svg" alt="" /><span>Culture</span></button>
+              <button class="app-icon" role="gridcell" data-app="health" aria-label="Open app: Health"><img src="assets/icons/ecosystem.svg" alt="" /><span>Health</span></button>
+              <button class="app-icon" role="gridcell" data-app="sources" aria-label="Open app: Sources"><img src="assets/icons/timeline.svg" alt="" /><span>Sources</span></button>
+            </div>
+
+            <article id="app-view" class="app-view" role="region" aria-live="polite" aria-label="App content" hidden>
+              <header class="app-nav">
+                <button id="btn-home" class="nav-btn" aria-label="Go Home">Home</button>
+                <h2 id="app-title">Title</h2>
+                <button id="btn-back" class="nav-btn" aria-label="Back">Back</button>
+              </header>
+              <div id="app-content" class="app-content"></div>
+              <footer class="home-indicator" aria-hidden="true"></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="help-modal" aria-labelledby="help-title" class="modal">
+    <h3 id="help-title">Pro / Con Theme</h3>
+    <p><b>Light mode</b> = Pros (green). <b>Dark mode</b> = Cons (red).</p>
+    <p>Each subject uses a familiar iOS app layout (e.g., Culture ≈ Instagram, Economy ≈ Stocks, Health ≈ Health). The content itself flips to Pros vs Cons.</p>
+    <ol>
+      <li>Click an app on the phone home screen.</li>
+      <li>Use the <b>Theme</b> button to switch between Pros and Cons.</li>
+      <li>Edit <code>app.js</code> to replace placeholder text/metrics with your own.</li>
+    </ol>
+    <button id="help-close" class="primary">Close</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
